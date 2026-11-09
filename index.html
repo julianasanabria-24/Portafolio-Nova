@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Portafolio Nova</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;700&family=Cormorant+Garamond:wght@500;600&family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,700&family=Pinyon+Script&family=Playfair+Display:ital,wght@0,400..800;1,400..800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="shared/base.css">
+<link rel="stylesheet" href="home/home.css">
+<link rel="stylesheet" href="aboutme/aboutme.css">
+<link rel="stylesheet" href="proyects/proyects.css">
+<link rel="stylesheet" href="skills/skills.css">
+<link rel="stylesheet" href="contact/contact.css">
+<script type="importmap">{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js","three/addons/":"https://cdn.jsdelivr.net/npm/three@0.160.0/examples/jsm/"}}</script>
+<script src="https://cdn.jsdelivr.net/npm/lenis@1.1.13/dist/lenis.min.js"></script>
+<script type="module" src="shared/main.js"></script>
+</head>
+<body class="splash-on">
+<!-- SPLASH: pantalla de entrada mientras carga el portafolio (shared/main.js la retira) -->
+<div class="splash" id="splash" role="img" aria-label="Nova">
+  <!-- "Nova" se escribe en cursiva letra por letra (trazo y luego relleno) y una línea fina aparece debajo -->
+  <div class="sp-in">
+    <svg class="sp-svg" viewBox="0 0 600 260" aria-hidden="true">
+      <text class="sp-word" id="spWord" x="300" y="190" text-anchor="middle">Nova</text>
+    </svg>
+    <span class="sp-line" aria-hidden="true"></span>
+  </div>
+</div>
+<script>
+  // cuando la letra cursiva ya cargó (máx. 1.5 s de espera), cada letra se separa en su propio <text>
+  // en la misma posición que ocupa dentro de la palabra, para animarlas una tras otra.
+  // main.js lee data-go para saber cuándo termina.
+  (function () {
+    var sp = document.getElementById('splash'), word = document.getElementById('spWord');
+    var go = function () {
+      if (sp.dataset.go) return;
+      try {
+        var txt = word.textContent, svgNS = 'http://www.w3.org/2000/svg';
+        for (var i = 0; i < txt.length; i++) {
+          var p = word.getStartPositionOfChar(i), t = document.createElementNS(svgNS, 'text');
+          t.setAttribute('x', p.x); t.setAttribute('y', p.y); t.setAttribute('class', 'sp-l');
+          t.style.setProperty('--d', (i * .42) + 's'); t.textContent = txt[i];
+          word.parentNode.appendChild(t);
+        }
+        word.style.display = 'none';
+      } catch (e) { word.classList.add('sp-plain'); }
+      sp.dataset.go = performance.now(); sp.classList.add('go');
+    };
+    (document.fonts && document.fonts.load ? document.fonts.load('250px "Pinyon Script"') : Promise.resolve()).then(go, go);
+    setTimeout(go, 1500);
+  })();
+</script>
+<nav class="nav" aria-label="Principal">
+  <a class="logo" href="#inicio" data-target="home" aria-label="Nova, inicio">Nova</a>
+  <button class="burger" id="burger" type="button" aria-expanded="false" aria-controls="menu" aria-label="Abrir menú"><span></span><span></span><span></span></button>
+  <div class="menu" id="menu" aria-hidden="true">
+    <ul>
+      <li><a class="link" href="#inicio" data-target="home"><small>01</small>Inicio</a></li>
+      <li><a class="link" href="#sobre-mi" data-target="about"><small>02</small>Sobre mí</a></li>
+      <li><a class="link" href="#proyectos" data-target="projects"><small>03</small>Proyectos</a></li>
+      <li><a class="link" href="#habilidades" data-target="skills"><small>04</small>Habilidades</a></li>
+      <li><a class="link" href="#contacto" data-target="contact"><small>05</small>Contacto</a></li>
+    </ul>
+    <p class="menu-foot">Nova · Juliana Sanabria Parra · 2026</p>
+  </div>
+</nav>
+<div class="curtain" aria-hidden="true"><span>Nova</span></div>
+<div class="toast" role="status" aria-live="polite"></div>
+
+<main class="book" id="book">
+  <!-- las secciones se cargan desde home/, aboutme/, proyects/, skills/ y contact/ (ver shared/main.js) -->
+  <div class="stage" id="stage"></div>
+</main>
+</body></html>

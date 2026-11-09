@@ -1,0 +1,24 @@
+/* ---------- CONTACTO ---------- */
+#contact .face{background:#D6286E;color:#fff}
+#eyes{position:absolute;inset:0;width:100%;height:100%}
+#contactVideo{position:absolute;width:2px;height:2px;opacity:0;pointer-events:none}
+.contact-content{position:absolute;left:6vw;top:50%;transform:translateY(-50%);max-width:40vw;z-index:2}
+.contact-content .title{color:#fff;font-size:clamp(60px,7.6vw,124px);margin:0;line-height:.95;text-shadow:0 4px 30px rgba(90,15,44,.3)}
+.contact-content .title .s{color:#fff}
+.contact-content .sub{font-family:'Cormorant Garamond',Garamond,Georgia,serif;font-style:normal;font-weight:500;font-size:clamp(26px,2.4vw,38px);line-height:1.15;letter-spacing:.005em;margin:18px 0 34px;color:#FFF4F8}
+.contact-links{position:relative;display:flex;flex-wrap:nowrap;gap:6px clamp(16px,2vw,28px)}
+.clink{position:relative;display:inline-flex;align-items:center;gap:6px;color:#fff;text-decoration:none;font-weight:700;font-size:13px;letter-spacing:.18em;text-transform:uppercase;padding:4px 0}
+.clink::after{content:"";position:absolute;left:0;bottom:0;width:100%;height:1.5px;background:#fff;transform:scaleX(0);transform-origin:right;transition:transform .35s cubic-bezier(.6,0,.2,1)}
+.clink i{font-style:normal;display:inline-block;transform:translate(-6px,0);opacity:0;transition:transform .3s,opacity .3s}
+.clink:hover::after{transform:scaleX(1);transform-origin:left}
+.clink:hover i{transform:translate(0,-2px) rotate(-45deg);opacity:1}
+.foot{margin-top:40px;font-size:12.5px;opacity:.8}
+@media (max-width:1100px) and (min-width:801px){.contact-content{max-width:62vw}}
+@media (max-width:800px){.contact-links{flex-wrap:wrap;gap:12px 22px}.contact-content{left:6vw;right:6vw;max-width:none;top:auto;bottom:6vh;transform:none}}
+/* menú de opciones del correo */
+.mail-pop{position:absolute;left:var(--mx,0);top:calc(100% + 12px);z-index:5;min-width:210px;display:flex;flex-direction:column;padding:6px;border-radius:14px;background:#FFFBF7;box-shadow:0 18px 40px -12px rgba(60,5,30,.55);animation:mailIn .22s cubic-bezier(.2,1.2,.3,1)}
+.mail-pop[hidden]{display:none}
+.mail-pop::before{content:"";position:absolute;left:22px;top:-6px;width:12px;height:12px;background:#FFFBF7;transform:rotate(45deg)}
+.mail-pop button,.mail-pop a{all:unset;box-sizing:border-box;position:relative;padding:10px 14px;border-radius:9px;color:var(--ink);font-size:14px;font-weight:500;cursor:pointer}
+.mail-pop button:hover,.mail-pop a:hover,.mail-pop button:focus-visible,.mail-pop a:focus-visible{background:var(--blush);color:var(--hot)}
+@keyframes mailIn{from{opacity:0;transform:translateY(-6px)}}

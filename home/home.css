@@ -1,0 +1,53 @@
+/* ---------- INICIO: escritorio con fotos reales ---------- */
+#home .face{background:#C98F5E url(../assets/madera.jpg) center/cover}
+#home .face::after{content:"";position:absolute;inset:0;background:radial-gradient(ellipse at 40% 35%,rgba(255,240,225,.16),rgba(60,25,10,.28) 95%);pointer-events:none}
+.desk{position:absolute;left:50%;top:50%;width:max(100vw,160vh);height:max(100vh,62.5vw);transform:translate(-50%,-50%);transform-origin:50% 55%;transition:transform 1.3s cubic-bezier(.6,0,.2,1);container-type:size}
+.desk > *{position:absolute}
+.shadow{filter:drop-shadow(1px 2px 2px rgba(40,18,8,.28)) drop-shadow(10px 16px 14px rgba(60,28,10,.32))}
+.psheet{background:linear-gradient(170deg,#FFFFFF 0%,#FBF8F4 60%,#F1ECE6 100%);aspect-ratio:1/1.414;box-shadow:0 1px 1px rgba(0,0,0,.08),8px 14px 18px -6px rgba(60,28,10,.35);padding:3.2cqw 2.6cqw;overflow:hidden}
+.psheet::after{content:"";position:absolute;inset:0;background:var(--grain);background-size:180px;mix-blend-mode:multiply;opacity:.6}
+.psheet .h{height:.9cqw;width:46%;background:#E8B4C6;border-radius:2px;margin-bottom:1.6cqw}
+.psheet .l{height:.32cqw;background:rgba(59,22,38,.13);margin:1.05cqw 0;border-radius:2px}
+.psheet.ruled{background-image:linear-gradient(rgba(120,160,220,.22) 1px,transparent 1px),linear-gradient(170deg,#FFFFFF,#F4EFEA);background-size:100% 1.6cqw,100% 100%;background-position:0 3.2cqw,0 0}
+.psheet.ruled::before{content:"";position:absolute;left:12%;top:0;bottom:0;width:1px;background:rgba(214,40,110,.35)}
+.s1{left:14%;top:24%;width:21%;transform:rotate(-9deg)}
+.s2{left:60%;top:23%;width:21%;transform:rotate(7deg)}
+.s3{left:2.5%;top:50%;width:16%;transform:rotate(5deg)}
+/* teclado */
+.kbd{left:24%;top:-5.5%;width:50%;aspect-ratio:3.1/1;transform:rotate(-1.5deg);border-radius:1.4cqw;padding:1.1cqw 1.2cqw;background:linear-gradient(180deg,#FBE6EE,#F2CFDC);box-shadow:inset 0 .2cqw 0 rgba(255,255,255,.8),inset 0 -.3cqw .4cqw rgba(160,60,100,.25),2px 4px 3px rgba(60,28,10,.25),10px 22px 26px -10px rgba(60,28,10,.45);display:flex;flex-direction:column;gap:.55cqw}
+.kbd .row{display:flex;gap:.55cqw;flex:1}
+.kbd .k{flex:1;border-radius:.55cqw;background:linear-gradient(180deg,#FFFFFF 0%,#F6F2F4 70%,#E7E0E4 100%);box-shadow:0 .22cqw 0 #D9CED4,0 .35cqw .4cqw rgba(120,60,80,.25),inset 0 .1cqw 0 #fff;font:600 .78cqw var(--sans);color:#8C7D84;display:flex;align-items:flex-start;justify-content:flex-start;padding:.35cqw .5cqw}
+.kbd .k.w15{flex:1.5}.kbd .k.w2{flex:2}.kbd .k.w6{flex:6.2}
+.d-badge{left:25%;top:20%;width:8.6%;transform:rotate(-12deg);z-index:6}
+.d-card{left:68%;top:50%;width:17%;transform:rotate(-14deg)}
+.d-cup{left:77%;top:57%;width:27%;transform:rotate(-8deg);z-index:7}
+.hl1{left:5.5%;top:30%;width:3.4%;transform:rotate(62deg)}
+.hl2{left:84%;top:12%;width:3.4%;transform:rotate(-38deg)}
+.hl3{left:88.5%;top:30%;width:3.4%;transform:rotate(18deg)}
+.hl4{left:20%;top:73%;width:3.4%;transform:rotate(-74deg)}
+
+.folder{left:29%;top:30%;width:42%;aspect-ratio:1048/808;perspective:1800px;cursor:pointer;container-type:inline-size;animation:rise 1.2s cubic-bezier(.16,1,.3,1) .15s backwards;z-index:4}
+@keyframes rise{from{transform:translateY(70vh) rotate(8deg)}}
+.f-back{position:absolute;inset:0;width:100%;height:100%}
+.f-inside{position:absolute;left:0;right:0;top:10.8%;bottom:0;border-radius:0 0 1.2cqw 1.2cqw;background:linear-gradient(180deg,#C9AE8A 0%,#DCC3A0 7%,#E2CBA8 100%);box-shadow:inset 0 6px 14px rgba(90,60,30,.25)}
+.f-paper{position:absolute;left:6%;right:6%;top:5%;bottom:6%;background:#FFFDF9;box-shadow:0 2px 6px rgba(60,30,10,.18);padding:6cqw 7cqw;background-image:linear-gradient(rgba(232,80,138,.12) 1px,transparent 1px);background-size:100% 4.2cqw}
+.f-paper .t{font-family:var(--serif);font-size:9cqw;color:var(--wine);line-height:1}
+.f-paper .t .s{font-family:var(--script);color:var(--hot);font-size:1.15em}
+.f-paper .l{height:.8cqw;background:rgba(59,22,38,.14);margin:3cqw 0;border-radius:2px}
+.f-cover{position:absolute;left:0;right:0;top:10.8%;bottom:0;transform-origin:50% 100%;transform-style:preserve-3d;transition:transform .75s cubic-bezier(.6,0,.2,1)}
+.folder.open .f-cover{transform:rotateX(-176deg)}
+.f-cover > img,.f-print,.f-cover-back{position:absolute;inset:0;width:100%;height:100%;backface-visibility:hidden;-webkit-backface-visibility:hidden}
+.f-cover-back{transform:rotateX(180deg);background:linear-gradient(0deg,#D9BF9B,#E7D2B2);border-radius:1.2cqw 1.2cqw 0 0}
+.f-print{display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;mix-blend-mode:multiply;padding-top:4cqw}
+.f-print .k{font-size:1.45cqw;letter-spacing:.42em;font-weight:700;color:#7A2443;opacity:.85}
+.f-print .my{font-family:var(--script);font-size:9cqw;color:#D93B7B;line-height:.8;margin-top:2.4cqw}
+.f-print .pf{font-family:var(--serif);font-style:italic;font-weight:600;font-size:11.5cqw;color:#D93B7B;line-height:1}
+.f-print .nv{font-size:2.3cqw;letter-spacing:.8em;font-weight:700;color:#6A1735;margin-top:1.6cqw;padding-left:.8em}
+.f-print .stamp{position:absolute;right:7%;top:14%;transform:rotate(-10deg);border:.38cqw solid rgba(232,80,138,.8);color:rgba(232,80,138,.85);padding:.6cqw 1.6cqw;font-family:var(--serif);font-weight:700;letter-spacing:.16em;font-size:2.1cqw;border-radius:.4cqw}
+.d-post{left:63.5%;top:72%;width:9%;aspect-ratio:1;transform:rotate(7deg);display:grid;place-items:center;font-family:var(--hand);font-weight:700;font-size:2.3cqw;color:var(--wine);line-height:1;cursor:pointer;border:0;padding:0;z-index:6;background:linear-gradient(165deg,#FCEFA6,#F2D977);box-shadow:0 1px 1px rgba(0,0,0,.1),6px 12px 14px -6px rgba(60,28,10,.45),inset 0 -1.2cqw 1.4cqw -1cqw rgba(120,90,10,.25);transition:opacity .4s,transform .3s}
+.d-post:hover{transform:rotate(3deg) scale(1.05)}
+.desk.opened .d-post,.desk.opened .d-badge{opacity:0;pointer-events:none;transition:opacity .4s}
+/* al abrir la carpeta, la hoja "Sobre mí" sale flotando y crece hasta llenar la pantalla (home.js) */
+.paper-fly{position:fixed;left:0;top:0;width:100vw;height:100vh;z-index:58;pointer-events:none;transform-origin:0 0;box-shadow:0 30px 60px -20px rgba(60,28,10,.5);will-change:transform}
+/* en pantallas verticales se ve más escritorio (antes solo el centro de la carpeta) */
+@media (orientation:portrait){.desk{width:205vw;height:128vw}}

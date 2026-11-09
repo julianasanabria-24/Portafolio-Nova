@@ -1,0 +1,65 @@
+<!-- HABILIDADES -->
+<section class="page" id="skills" aria-label="Habilidades">
+  <div class="face zipped" id="bagFace">
+    <div class="lining-head">
+      <h2 class="title lining-title"><span class="s">¿Qué hay en</span> mi bolso?</h2>
+      <p class="lining-sub">Esto es lo que puedes saber de mis capacidades</p>
+    </div>
+    <!-- OBJETOS DEL BOLSO: pasan en fila, lento (la fila se duplica sola en skills.js para que el giro no se corte)
+         --h = alto del objeto · --r = giro · --b = cuánto sube desde la línea de abajo
+         .btip = texto que aparece al pasar el cursor -->
+    <div class="items" id="items"><div class="btrack" id="btrack">
+      <div class="bitem" tabindex="0" style="--h:38vh;--r:-8deg;--b:1vh">
+        <div class="btip"><b>Escucha activa</b><span>Escucho a usuarios, compañeros y comentarios antes de saltar a una solución.</span></div>
+        <img src="assets/audifonos.webp" alt="Escucha activa">
+      </div>
+
+      <div class="bitem" tabindex="0" style="--h:32vh;--r:4deg;--b:2vh">
+        <div class="btip"><b>Atención al detalle</b><span>Espaciados, alineación, colores: noto los detalles que hacen que un diseño se sienta terminado.</span></div>
+        <img src="assets/camara.webp" alt="Atención al detalle">
+      </div>
+
+      <div class="bitem" tabindex="0" style="--h:17vh;--r:-6deg;--b:7vh">
+        <div class="btip"><b>Creatividad</b><span>Miro los problemas desde otros ángulos y me encanta encontrar la idea inesperada.</span></div>
+        <img src="assets/gafas.webp" alt="Creatividad">
+      </div>
+
+      <div class="bitem" tabindex="0" style="--h:44vh;--r:3deg;--b:0vh">
+        <div class="btip"><b>Programas que uso</b><span>Figma · Adobe Illustrator · Adobe Photoshop · Substance 3D Painter · Canva · CapCut · GitHub</span></div>
+        <img src="assets/logos.webp" alt="Programas que uso">
+      </div>
+
+      <div class="bitem" tabindex="0" style="--h:31vh;--r:-5deg;--b:3vh">
+        <div class="btip"><b>Trabajo en equipo</b><span>Como un caimán: ayudo a mantener unido al equipo y todo en su lugar.</span></div>
+        <img src="assets/caiman.webp" alt="Trabajo en equipo">
+      </div>
+
+      <div class="bitem" tabindex="0" style="--h:47vh;--r:10deg;--b:0vh">
+        <div class="btip"><b>Resolución de problemas</b><span>Desenredo problemas complicados paso a paso hasta que tienen sentido.</span></div>
+        <img src="assets/cepillo.webp" alt="Resolución de problemas">
+      </div>
+
+      <div class="bitem" tabindex="0" style="--h:43vh;--r:-6deg;--b:1vh">
+        <div class="btip"><b>Comunicación</b><span>Explico mis decisiones de diseño con claridad y mantengo a todos al tanto.</span></div>
+        <img src="assets/gloss.webp" alt="Comunicación">
+      </div>
+    </div></div>
+    <div class="leather lt-top" id="ltTop"><span class="bag-sub">Nova · habilidades</span><div class="stitch"></div><div class="zip-tape"></div><div class="teeth"></div></div>
+    <div class="leather lt-bot" id="ltBot"><div class="stitch"></div><div class="zip-tape"></div><div class="teeth"></div></div>
+    <button class="pull" id="pull" type="button" aria-label="Abrir la cremallera del bolso">
+      <svg viewBox="0 0 80 190"><defs><linearGradient id="zm" x1="0" x2="1"><stop offset="0" stop-color="#8A6420"/><stop offset=".35" stop-color="#FFF1C2"/><stop offset=".6" stop-color="#DDB453"/><stop offset="1" stop-color="#7A5418"/></linearGradient><linearGradient id="zm2" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#FFF0BE"/><stop offset="1" stop-color="#A57B2C"/></linearGradient></defs>
+        <path d="M12 6 H68 Q76 6 73 15 L64 46 Q62 54 54 54 H26 Q18 54 16 46 L7 15 Q4 6 12 6Z" fill="url(#zm2)" stroke="#6B4A14" stroke-width="1.4"/>
+        <path d="M20 16 H60" stroke="#fff" stroke-opacity=".7" stroke-width="2"/>
+        <rect x="33" y="44" width="14" height="22" rx="4" fill="url(#zm)" stroke="#6B4A14"/>
+        <path d="M24 62 H56 Q63 62 63 71 L58 166 Q57 182 40 182 Q23 182 22 166 L17 71 Q17 62 24 62Z" fill="url(#zm)" stroke="#6B4A14" stroke-width="1.4"/>
+        <rect x="31" y="80" width="18" height="78" rx="9" fill="#2E0716" opacity=".85"/>
+        <path d="M40 132 C33 125 31 120 34 117 36 115 39 117 40 119 41 117 44 115 46 117 49 120 47 125 40 132Z" fill="#F4A3C0"/>
+      </svg>
+    </button>
+    <span class="pull-hint" id="pullHint">haz clic para abrir ♡</span>
+  </div>
+  <div class="back"></div><div class="gloss"></div><div class="shade"></div>
+</section>
+
+<!-- No borrar: Live Server inserta aquí su script de recarga (shared/main.js lo quita al cargar la sección) -->
+</body>
